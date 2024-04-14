@@ -1,7 +1,19 @@
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import { useState, useContext } from 'react';
+import { Button, Card } from 'react-bootstrap';
+import { PhotosContext } from '../context/PhotosContext';
+
 
 const Gallery = () => {
+const [ data, setData ] = useState([])
+
+  const obtenerDatos = async () => {
+    const url = "public/photos.json"
+    const res = await fetch(url)
+    const data = await res.json()
+    setData(data.data)
+}
+
+
   return(
 
     <Card style={{ width: '18rem' }}>
