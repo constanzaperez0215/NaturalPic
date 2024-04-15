@@ -10,7 +10,6 @@ const PhotosProvider = ({children}) => {
     const res = await fetch('public/photos.json')
     const data = await res.json()
     const dataPhotos = data.photos
-    console.log(dataPhotos)
     setPhotos(dataPhotos)
 
   }
