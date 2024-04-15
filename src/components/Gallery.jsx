@@ -1,28 +1,19 @@
-import { useState, useContext } from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { PhotosContext } from '../context/PhotosContext';
+import IconHeart from './IconHeart';
 
+const Gallery = ({photo}) => {
 
-const Gallery = () => {
-const [ data, setData ] = useState([])
-
-  const obtenerDatos = async () => {
-    const url = "public/photos.json"
-    const res = await fetch(url)
-    const data = await res.json()
-    setData(data.data)
-}
-
-
+  
   return(
 
     <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={photo["src"].medium} alt="" />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <span>
+           <IconHeart />
+        </span>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {photo["alt"]}
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>

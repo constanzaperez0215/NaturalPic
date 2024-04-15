@@ -1,13 +1,28 @@
-import { Children, createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 
 export const PhotosContext = createContext()
 
-const PhotosProvider = () => {
-const [photos, setPhotos] = useState ([])
+const PhotosProvider = ({children}) => {
+
+  const [photos, setPhotos] = useState ([])
+
+  const getData = async () => {
+    const res = await fetch('public/photos.json')
+    const data = await res.json()
+    const dataPhotos = data.photos
+    console.log(dataPhotos)
+    setPhotos(dataPhotos)
+
+  }
+
+  useEffect(()=>{
+    getData()
+  },[])
+
 
   return (
-    <PhotosContext.Provider value={photos, setPhotos}>
-      {Children}
+    <PhotosContext.Provider value={{photos, setPhotos}}>
+      {children}
     </PhotosContext.Provider>
   )
 }
