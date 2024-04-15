@@ -8,7 +8,7 @@ const Favorites = () => {
 
   return (
     <>
-      <h1>Fotos favoritas</h1>
+      <h1 className='titulo'>Fotos favoritas</h1>
       <div className='container'>
         <div className="row">
 

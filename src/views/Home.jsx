@@ -8,7 +8,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Natural Pic</h1>
+      <h1 className='titulo'>Natural Pic</h1>
       <div className='container'>
         <div className="row">
 

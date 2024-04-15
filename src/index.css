@@ -9,8 +9,12 @@ body {
 }
 
 h1 {
-  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
 }
+
 
 
 /* Navbar */
@@ -34,11 +38,12 @@ a {
 .grid-columns-5 {
   grid-template-columns: repeat(5, 1fr);
 }
+
 .grid-columns-4 {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.gallery .photo {
+.card .photo {
   cursor: pointer;
   padding: 10px 10px 0px 10px;
   display: flex;
@@ -64,3 +69,4 @@ a {
 .p-3 {
   padding: 30px;
 }
+
